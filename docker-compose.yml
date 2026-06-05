@@ -1,1 +1,9 @@
-
+version: "3.9" services:  app:    build: .    container_name: go-app    environment:      MYSQL_DSN: root:root@tcp(mysql:3306)/demo    mysql:     image: mysql:8.0     container_name: go-db      
+depends_on:
+ - app
+ environement:
+ MYSQL_ROOT_PASSWORD: root
+ MYSQL_DATABASE: demo
+ ports:
+  
+ 
